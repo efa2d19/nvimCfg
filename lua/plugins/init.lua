@@ -1,28 +1,45 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
-  },
+    {
+        "stevearc/conform.nvim",
+        event = "BufWritePre",
+        opts = require("configs.conform"),
+    },
 
-  -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("nvchad.configs.lspconfig").defaults()
+            require("configs.lspconfig")
+        end,
+    },
 
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
+    -- test new blink
+    { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+    {
+        "nvim-tree/nvim-tree.lua",
+        opts = function()
+            require("configs.nvimtree")
+        end,
+    },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        config = function(_, opts)
+            require("nvim-treesitter.configs").setup(opts)
+            require("configs.treesitter")
+        end,
+    },
+
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("configs.gitsigns")
+        end,
+    },
+
+    {
+        "mg979/vim-visual-multi",
+        event = "VeryLazy",
+    },
 }
