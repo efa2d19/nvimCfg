@@ -4,7 +4,8 @@ local servers = {
     "bashls",
     "pylsp",
     "pyright",
-    "ruff_lsp",
+    "ruff",
+    "sourcekit",
 }
 
 local nvlsp = require("nvchad.configs.lspconfig")
