@@ -4,6 +4,7 @@ local servers = {
     "bashls",
     "pylsp",
     "pyright",
-    "ruff_lsp",
+    "ruff",
+    "sourcekit",
 }
 vim.lsp.enable(servers)
