@@ -30,7 +30,7 @@ return {
 
     {
         "mg979/vim-visual-multi",
-        event = { "BufRead", "BufNewFile" },
+        event = "VeryLazy",
     },
 
     "nvim-lua/plenary.nvim",
