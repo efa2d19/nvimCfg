@@ -14,6 +14,13 @@ return {
     },
 
     {
+        "nvim-tree/nvim-tree.lua",
+        opts = function()
+            require("configs.nvimtree")
+        end,
+    },
+
+    {
         "nvim-treesitter/nvim-treesitter",
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)
