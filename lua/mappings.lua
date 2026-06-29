@@ -65,3 +65,19 @@ if vim.opt.diff:get() then
 end
 
 map({ "n", "i", "v" }, "<C-p>", "<C-i>")
+
+map("n", "grc", function()
+    vim.lsp.buf.incoming_calls()
+end, { desc = "vim.lsp.buf.incoming_calls()" })
+
+map("n", "gro", function()
+    vim.lsp.buf.outgoing_calls()
+end, { desc = "vim.lsp.buf.outgoing_calls()" })
+
+map("n", "grs", function()
+    vim.lsp.buf.workspace_symbol()
+end, { desc = "vim.lsp.buf.workspace_symbol()" })
+
+map({ "n", "v", "i" }, "<C-h>", function()
+    vim.lsp.buf.signature_help()
+end, { desc = "vim.lsp.buf.signature_help()" })
